@@ -1,0 +1,22 @@
+1、打开QTcreater,制作图形化界面，保存为ui文件（如Mainwindow.ui)
+2、在终端打开，输入命令pyuic5 -o Mainwindow.py Mainwindow.ui(此处是将第一步的ui文件转化为py文件，可根据自身情况替换文件名及路径）
+3、打开生成的Mainwindow.py,在程序开头加入import sys,接着在程序结尾加入
+def main():
+    """
+    主函数，用于运行程序
+    :return: None
+    """
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
+
+
+if __name__ == '__main__':
+    main()
+
+4、在终端输入sudo python3 Mainwindow.py
+
+完整实例见/home/wfy/QT_project/PyQt_first-master/tax_calc.py 
